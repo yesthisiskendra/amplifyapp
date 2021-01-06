@@ -13,7 +13,7 @@ class App extends Component {
   }
 
   getTacos = () => {
-    fetch('https://showmetacos.herokuapp.com/api/tacos')
+    fetch('https://emergencytaco-api.herokuapp.com/api/tacos')
     .then(res => res.json())
     .then(tacos => this.setState({ tacos: tacos}));
   }
@@ -31,7 +31,7 @@ class App extends Component {
     const bodylocation = {location: e.target.text.value };
     console.log(JSON.stringify(bodylocation))
     this.setState({ currentlocation: e.target.text.value });
-    fetch('https://showmetacos.herokuapp.com/api/tacosbytown', {
+    fetch('https://emergencytaco-api.herokuapp.com/api/tacosbytown', {
       method: 'POST', 
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(bodylocation)
